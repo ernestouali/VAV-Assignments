@@ -17,6 +17,7 @@ Ej=xpar(7);
 Fj=xpar(8);
 
 if w0i<0
+    
     err0=1000; % We use a penalty algorithm to avoid having negative natural frequencies
 else
     err0=0;
@@ -29,7 +30,5 @@ Hjki=((Aj+1i*Bj)./(-Om.^2+2i*Om*(csii*w0i)+w0i^2))+(Cj+1i*Dj)+((Fj+1i*Ej)./(Om.^
 % Output error
 errcpx=(Hjki-Hjkiexp);
 err=sum(real(errcpx).^2)+sum(imag(errcpx).^2)+err0; % We compute the error along the whole interval
-
-end
 
 

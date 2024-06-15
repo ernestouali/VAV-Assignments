@@ -97,6 +97,9 @@ xlim([0 5])
     disp(['- fmax [Hz]: ' num2str(frq(ifin))])    
     npid=ifin-iini+1;
     disp(['Number of points for the identification: ' num2str(npid)])
+    
+
+
     %%
     % Function reduced to the range of interest
     rfHjki=frq(iini:ifin);          % We extract the reduce frequency estimation range
@@ -106,7 +109,7 @@ xlim([0 5])
     disp(' ')
     jj=input('Which diagram for identification? '); % Which measurement do you want to use to calculate the TF?
     
-    %% Modal parameters guessing
+    %% Point 3  Modal parameters guessing
     % Natural frequency
     [vmax,iwmax]=max(abs(Hjkiexp(:,jj)));  % We identify the maximum value in our frequency range
     f0i=rfHjki(iwmax); %[Hz]                 We then compute the corresponding frequency value
