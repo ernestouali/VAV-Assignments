@@ -38,8 +38,8 @@ for i = 1:4        % for each mode
     
     % Natural frequency
     [vmax, iwmax] = max(abs(Hjkiexp(:, jj)));        % Maximum of |FRF| inside [fini, ffin]
-    res_freq(i) = sub_freq_axis(iwmax);        % Frequency [Hz] of the maximum
-    w0i(i) = 2*pi*res_freq(i);            % Resonance frequency [rad/s]
+    res_freq(i) = sub_freq_axis(iwmax);         % Frequency [Hz] of the maximum
+    w0i(i) = 2*pi*res_freq(i);                  % Resonance frequency [rad/s]
     
     % Adimensional damping ration (phase derivative)
     derFIjki = (angle(Hjkiexp(iwmax+1, jj)) - angle(Hjkiexp(iwmax-1, jj)))/(2*pi*(sub_freq_axis(iwmax+1) - sub_freq_axis(iwmax-1)));
